@@ -4,8 +4,9 @@ export const sampleMatrix = [
   [-4, 24, -41],
 ];
 
-const goApiUrl = import.meta.env.VITE_GO_API_URL ?? 'http://localhost:3000';
-const nodeApiUrl = import.meta.env.VITE_NODE_API_URL ?? 'http://localhost:3001';
+const runtimeConfig = window.__APP_CONFIG__ ?? {};
+const goApiUrl = runtimeConfig.goApiUrl ?? import.meta.env.VITE_GO_API_URL ?? 'http://localhost:3000';
+const nodeApiUrl = runtimeConfig.nodeApiUrl ?? import.meta.env.VITE_NODE_API_URL ?? 'http://localhost:3001';
 
 let token = '';
 
