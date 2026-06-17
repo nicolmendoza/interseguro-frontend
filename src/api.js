@@ -5,8 +5,8 @@ export const sampleMatrix = [
 ];
 
 const runtimeConfig = window.__APP_CONFIG__ ?? {};
-const goApiUrl = runtimeConfig.goApiUrl ?? import.meta.env.VITE_GO_API_URL ?? 'http://localhost:3000';
-const nodeApiUrl = runtimeConfig.nodeApiUrl ?? import.meta.env.VITE_NODE_API_URL ?? 'http://localhost:3001';
+const goApiUrl = getRequiredConfig('goApiUrl', runtimeConfig.goApiUrl ?? import.meta.env.VITE_GO_API_URL);
+const nodeApiUrl = getRequiredConfig('nodeApiUrl', runtimeConfig.nodeApiUrl ?? import.meta.env.VITE_NODE_API_URL);
 
 let token = '';
 
@@ -56,4 +56,11 @@ async function parseResponse(response) {
   }
 
   return data;
+}
+
+function getRequiredConfig(key, value) {
+  if (!value) {
+    throw new Error(`Missing frontend configuration: ${key}`);
+  }
+  return value;
 }

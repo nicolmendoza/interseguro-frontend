@@ -18,8 +18,10 @@ export default defineConfig({
       reuseExistingServer: true,
       timeout: 120_000,
       env: {
-        JWT_SECRET: 'interseguro-secret',
+        JWT_SECRET: 'test-secret',
         PORT: '3001',
+        GO_API_URL: 'http://127.0.0.1:3000',
+        NODE_API_URL: 'http://127.0.0.1:3001',
       },
     },
     {
@@ -29,7 +31,7 @@ export default defineConfig({
       reuseExistingServer: true,
       timeout: 120_000,
       env: {
-        JWT_SECRET: 'interseguro-secret',
+        JWT_SECRET: 'test-secret',
         NODE_API_URL: 'http://127.0.0.1:3001',
         PORT: '3000',
       },
@@ -39,6 +41,10 @@ export default defineConfig({
       url: 'http://127.0.0.1:5173',
       reuseExistingServer: true,
       timeout: 120_000,
+      env: {
+        VITE_GO_API_URL: 'http://127.0.0.1:3000',
+        VITE_NODE_API_URL: 'http://127.0.0.1:3001',
+      },
     },
   ],
   projects: [
