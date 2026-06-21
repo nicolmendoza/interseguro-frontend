@@ -6,11 +6,7 @@ set -eu
 : "${PORT:=8080}"
 
 envsubst '${GO_API_URL} ${NODE_API_URL}' \
-  < /etc/nginx/templates/config.template.js \
-  > /usr/share/nginx/html/config.js
+  < ./config.template.js \
+  > ./public/config.js
 
-envsubst '${PORT}' \
-  < /etc/nginx/templates/default.conf.template \
-  > /etc/nginx/conf.d/default.conf
-
-exec nginx -g 'daemon off;'
+exec node server.js

@@ -7,13 +7,13 @@ export default defineConfig({
     timeout: 10_000,
   },
   use: {
-    baseURL: 'http://127.0.0.1:5173',
+    baseURL: 'http://127.0.0.1:3002',
     trace: 'on-first-retry',
   },
   webServer: [
     {
-      command: 'npm start',
-      cwd: '../node-api',
+      command: 'npm run dev',
+      cwd: '../interseguro-node-api',
       url: 'http://127.0.0.1:3001/health',
       reuseExistingServer: true,
       timeout: 120_000,
@@ -26,7 +26,7 @@ export default defineConfig({
     },
     {
       command: 'go run .',
-      cwd: '../go-api',
+      cwd: '../interseguro-go-api',
       url: 'http://127.0.0.1:3000/health',
       reuseExistingServer: true,
       timeout: 120_000,
@@ -37,13 +37,13 @@ export default defineConfig({
       },
     },
     {
-      command: 'npm run dev -- --host 127.0.0.1',
-      url: 'http://127.0.0.1:5173',
+      command: 'npm run dev',
+      url: 'http://127.0.0.1:3002',
       reuseExistingServer: true,
       timeout: 120_000,
       env: {
-        VITE_GO_API_URL: 'http://127.0.0.1:3000',
-        VITE_NODE_API_URL: 'http://127.0.0.1:3001',
+        NEXT_PUBLIC_GO_API_URL: 'http://127.0.0.1:3000',
+        NEXT_PUBLIC_NODE_API_URL: 'http://127.0.0.1:3001',
       },
     },
   ],

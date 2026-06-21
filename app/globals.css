@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #0055c8;
+  --color-primary-dark: #003b8f;
+  --color-sky: #00a8e8;
+  --color-sky-dark: #0788db;
+  --color-sky-light: #02b7e6;
+  --color-accent: #ec1499;
+  --color-ink: #111a4d;
+  --color-muted: #677095;
+  --color-line: #d8deea;
+  --color-line-soft: #edf0f6;
+  --color-panel: #ffffff;
+  --color-page: #f5f7fb;
+  --color-lime: #ebffd9;
+  --color-danger: #ef3340;
+  --color-warning: #b15f00;
+  --color-warning-bg: #fff4db;
+  --color-warning-border: #ffc766;
+  --color-action-muted: #7f86aa;
+  --color-action-muted-hover: #6e7598;
+  --color-result-bg: #071f46;
+  --color-result-text: #d8f7ff;
+  --color-security-text: #d7f4ff;
+  --color-input-border: #c8cedd;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --shadow-page-primary: rgb(0 85 200 / 0.1);
+  --shadow-page-sky: rgb(0 168 232 / 0.12);
+  --shadow-panel: 0 10px 24px rgb(17 26 77 / 0.12);
+  --shadow-security: 0 14px 26px rgb(0 85 200 / 0.2);
+  --border-security-soft: rgb(255 255 255 / 0.16);
+  --outline-primary: rgb(0 85 200 / 0.15);
+  --radius-panel: 8px;
+  color: var(--color-ink);
+  background: var(--color-page);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-sofia-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 22% 32%, var(--shadow-page-primary) 0 150px, var(--color-transparent) 151px),
+    radial-gradient(circle at 76% 72%, var(--shadow-page-sky) 0 135px, var(--color-transparent) 136px),
+    var(--color-page);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+button {
+  min-height: 42px;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+button:hover {
+  background: var(--color-primary-dark);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+input {
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+input:focus {
+  border-color: var(--color-primary);
+  outline: 3px solid var(--outline-primary);
+}
