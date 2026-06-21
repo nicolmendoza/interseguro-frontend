@@ -53,8 +53,6 @@ GO_API_URL=https://interseguro-go-api-745150536858.europe-west1.run.app
 NODE_API_URL=https://interseguro-node-api-745150536858.europe-west1.run.app
 ```
 
-`PORT` no se define manualmente en Cloud Run porque la plataforma lo inyecta automaticamente en el contenedor.
-
 ## Levantar los tres servicios con Docker
 
 Desde cada repo, construir las imagenes:
@@ -124,23 +122,6 @@ Swagger:  http://localhost:3001/docs
 
 Nota: en frontend, `GO_API_URL` y `NODE_API_URL` deben ser URLs accesibles desde el navegador. Por eso en Docker local se usan `localhost`, no nombres internos de contenedores.
 
-## Ejecutar en local sin Docker solo para desarrollo
-
-Primero levanta Node API y Go API.
-
-Luego:
-
-```bash
-npm install
-npm run dev
-```
-
-Frontend:
-
-```txt
-http://localhost:3002
-```
-
 ## Tests
 
 Unit tests:
@@ -164,7 +145,7 @@ npm run build
 E2E con Playwright:
 
 ```bash
-npx playwright install
+npm run test:e2e:install
 npm run test:e2e
 ```
 
@@ -294,12 +275,12 @@ PORT
 ## Scripts principales
 
 ```bash
-npm run dev
 npm run build
 npm run start
 npm run lint
 npm run format
 npm run typecheck
 npm test
+npm run test:e2e:install
 npm run test:e2e
 ```

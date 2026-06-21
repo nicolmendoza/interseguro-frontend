@@ -12,6 +12,7 @@
     "start": "next start -H 0.0.0.0 -p 3002",
     "test": "jest",
     "typecheck": "tsc --noEmit",
+    "test:e2e:install": "playwright install",
     "test:e2e": "playwright test"
   },
   "dependencies": {
