@@ -13,8 +13,6 @@ Consume:
 - npm
 - Docker
 
-La forma recomendada de levantar el proyecto es con Docker, porque el reto solicita contenerizar las aplicaciones y facilita ejecutar los tres servicios con configuracion consistente.
-
 Para pruebas E2E, los tres repos deben estar como carpetas hermanas:
 
 ```txt
