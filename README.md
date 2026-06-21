@@ -81,6 +81,9 @@ docker run --rm --name interseguro-node-api \
   --network interseguro-net \
   -e PORT=8080 \
   -e JWT_SECRET=local-development-secret \
+  -e FRONTEND_URL=http://localhost:3002 \
+  -e RATE_LIMIT_MAX=100 \
+  -e RATE_LIMIT_WINDOW_SECONDS=60 \
   -e NODE_API_URL=http://localhost:3001 \
   -p 3001:8080 \
   interseguro-node-api
@@ -93,6 +96,9 @@ docker run --rm --name interseguro-go-api \
   --network interseguro-net \
   -e PORT=3000 \
   -e JWT_SECRET=local-development-secret \
+  -e FRONTEND_URL=http://localhost:3002 \
+  -e RATE_LIMIT_MAX=100 \
+  -e RATE_LIMIT_WINDOW_SECONDS=60 \
   -e NODE_API_URL=http://interseguro-node-api:8080 \
   -p 3000:3000 \
   interseguro-go-api
