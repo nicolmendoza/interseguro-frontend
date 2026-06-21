@@ -1,6 +1,6 @@
 # Interseguro Frontend
 
-Frontend del reto tecnico construido con Next.js, React y TypeScript.
+Frontend del reto tecnico construido con Next.js, React y TypeScript. La interfaz es responsive y se adapta a escritorio y pantallas pequeñas.
 
 Consume:
 
