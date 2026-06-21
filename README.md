@@ -1,6 +1,6 @@
 # Interseguro Frontend
 
-Frontend del reto tecnico construido con Next.js, React y TypeScript. La interfaz es responsive y se adapta a escritorio y pantallas pequeñas.
+Frontend del reto tecnico construido con Next.js, React y TypeScript. La interfaz es responsive y se adapta a escritorio y pantallas pequenas.
 
 Consume:
 
@@ -30,8 +30,10 @@ Servicios desplegados en Google Cloud Run:
 Frontend: https://interseguro-technical-challenge-745150536858.europe-west1.run.app/
 Go API:   https://interseguro-go-api-745150536858.europe-west1.run.app
 Node API: https://interseguro-node-api-745150536858.europe-west1.run.app
-Swagger:  https://interseguro-node-api-745150536858.europe-west1.run.app/docs
-OpenAPI:  https://interseguro-node-api-745150536858.europe-west1.run.app/openapi.json
+Swagger Go:   https://interseguro-go-api-745150536858.europe-west1.run.app/docs
+OpenAPI Go:   https://interseguro-go-api-745150536858.europe-west1.run.app/openapi.json
+Swagger Node: https://interseguro-node-api-745150536858.europe-west1.run.app/docs
+OpenAPI Node: https://interseguro-node-api-745150536858.europe-west1.run.app/openapi.json
 ```
 
 ## Despliegue en Google Cloud
@@ -79,7 +81,6 @@ docker run --rm --name interseguro-node-api \
   --network interseguro-net \
   -e PORT=8080 \
   -e JWT_SECRET=local-development-secret \
-  -e GO_API_URL=http://localhost:3000 \
   -e NODE_API_URL=http://localhost:3001 \
   -p 3001:8080 \
   interseguro-node-api
@@ -115,7 +116,8 @@ URLs:
 Frontend: http://localhost:3002
 Go API:   http://localhost:3000
 Node API: http://localhost:3001
-Swagger:  http://localhost:3001/docs
+Swagger Go:   http://localhost:3000/docs
+Swagger Node: http://localhost:3001/docs
 ```
 
 Nota: en frontend, `GO_API_URL` y `NODE_API_URL` deben ser URLs accesibles desde el navegador. Por eso en Docker local se usan `localhost`, no nombres internos de contenedores.
