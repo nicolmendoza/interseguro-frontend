@@ -36,7 +36,7 @@ describe('getZeroColumnIndex', () => {
     ).toBe(2);
   });
 
-  it('devuelve menos uno cuando no hay columnas vacias', () => {
+  it('devuelve -1 cuando no hay columnas vacias', () => {
     expect(
       getZeroColumnIndex([
         [12, -51, 4],
