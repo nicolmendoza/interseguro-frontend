@@ -38,13 +38,13 @@ OpenAPI:  https://interseguro-node-api-745150536858.europe-west1.run.app/openapi
 
 ## Despliegue en Google Cloud
 
-Los tres servicios estan desplegados en Google Cloud Run:
+Los tres servicios fueron desplegados en Google Cloud Run usando contenedores Docker:
 
 - `interseguro-frontend`: aplicacion Next.js servida desde un contenedor Docker.
 - `interseguro-go-api`: API Go/Fiber para QR, rotacion y orquestacion.
 - `interseguro-node-api`: API Node/Express para estadisticas y documentacion Swagger/OpenAPI.
 
-Cada servicio se construye como imagen Docker y se despliega de forma independiente. El codigo fuente esta versionado en GitHub y Cloud Build queda conectado al repositorio correspondiente para compilar la imagen y publicar una nueva revision en Cloud Run cuando se suben cambios.
+Cada servicio se construye como imagen Docker y se despliega de forma independiente en Cloud Run. El codigo fuente esta versionado en GitHub y Cloud Build queda conectado al repositorio correspondiente para compilar la imagen y publicar una nueva revision cuando se suben cambios.
 
 Las variables de entorno se configuran desde Cloud Run, no quedan hardcodeadas en el codigo fuente. En produccion el frontend usa:
 
