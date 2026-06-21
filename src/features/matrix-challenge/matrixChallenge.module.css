@@ -306,12 +306,21 @@
   .workspace {
     grid-template-columns: 1fr;
     gap: 18px;
+    justify-items: center;
+  }
+
+  .inputPanel {
+    position: static;
+    width: min(100%, 460px);
+  }
+
+  .resultPanel {
+    width: 100%;
   }
 
   .resultGrid {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media (max-width: 560px) {
