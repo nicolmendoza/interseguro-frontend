@@ -53,6 +53,12 @@ body {
     var(--color-page);
 }
 
+body,
+body > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
 button,
 input {
   font: inherit;
