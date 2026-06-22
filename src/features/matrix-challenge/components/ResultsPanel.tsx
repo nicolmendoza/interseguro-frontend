@@ -19,7 +19,7 @@ export function ResultsPanel({ result }: ResultsPanelProps) {
         <ResultPanel title="Q - Go API" testId="q-output" value={result.q} />
         <ResultPanel title="R - Go API" testId="r-output" value={result.r} />
         <ResultPanel title="Estadisticas - Node API" testId="stats-output" value={result.stats} />
-        <ResultPanel title="Rotacion - Extra del enunciado" testId="rotated-output" value={result.rotated} />
+        <ResultPanel title="Rotacion - Go API" testId="rotated-output" value={result.rotated} />
       </div>
     </div>
   );
